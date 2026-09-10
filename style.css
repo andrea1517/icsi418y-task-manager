@@ -1,0 +1,35 @@
+.task-list{
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #9c0000;
+    box-sizing: border-box;
+    padding: 0px 20px;
+}
+
+h1{
+    text-align: center;
+    color: #232f34;
+    font-family: "Calibri", "Trebuchet MS", sans-serif;
+}
+
+body{
+    background-color: #e5e8ec;
+    padding: 5px 20px;
+}
+
+label[for="low"]{
+    color: green;
+}
+
+label[for="medium"]{
+    color: #f7ca36;
+}
+
+label[for="high"]{
+    color: red;
+}
+
+.completed{
+    color: gray;
+    text-decoration: line-through;
+}

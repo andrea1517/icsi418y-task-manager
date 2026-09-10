@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Andrea's Task Manager</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Andrea's Task Manager</h1>
+        </header>
+
+        <div id="input-section">
+            <form id="task-form">
+                <div id="task-info">
+                    <label for="task-input">Task:</label>
+                    <input id="task-input" placeholder="Enter a new task..." type="text">
+                </div>
+
+                <div id="priority-input">
+                    <label for="priority">Priority:</label>
+                    <input type="radio" id="low" value="low" name="priority">
+                    <label for="low">Low</label>
+                    <input type="radio" id="medium" value="medium" name="priority">
+                    <label for="medium">Medium</label>
+                    <input type="radio" id="high" value="high" name="priority">
+                    <label for="high">High</label>
+                </div>
+
+                <button type="submit">Add Task</button><hr>
+
+                <p id="error-message" class="error-message"></p>
+            </form>
+        </div>
+
+        <div class="task-list">
+            <h1>THE Task List</h1>
+            <hr>
+            <ul id="task-items"></ul>
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
