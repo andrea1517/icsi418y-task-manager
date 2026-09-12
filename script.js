@@ -1,6 +1,5 @@
 const form = document.querySelector("#task-form");
 const taskInput = document.querySelector("#task-input");
-const priorityInput = document.querySelector("#priority-input");
 const taskList = document.querySelector("#task-list");
 const errorMessage = document.querySelector("#error-message");
 
@@ -10,21 +9,35 @@ form.addEventListener("submit", function(event) {
     event.preventDefault();
 
     const taskName = taskInput.value;
-    const taskPriority = priorityInput.value;
+    const taskPriority = document.querySelector('input[name="priority"]:checked');
 
-    if (taskName === null) {
+    if (taskName === "") {
         errorMessage.textContent = "Error! Please enter a valid task name.";
         return;
     }
 
+    if (taskPriority === null) {
+        errorMessage.textContent = "Error! Please select a priority."
+        return;
+    }
+
+    const task = {
+        name: taskName,
+        priority: taskPriority.value,
+        completed: false
+    };
+    
+    tasks.push(task);
     errorMessage.textContent = "";
-    addTask(taskName, taskPriority);
+
+    displayTasks();
 
     taskInput.value = "";
-    taskInput.focus();
+    taskPriority.completed = false;
 });
 
-function addTask(name, priorityInput) {
-    tasks.push(task);
-    displayTasks();
+function displayTasks() {
+    taskList.innerHTML = "";
+
+    
 }
