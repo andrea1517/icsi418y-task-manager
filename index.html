@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Andrea's Task Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> The Task Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,21 +16,21 @@
             </div>
 
             <div id="priority-input">
-                <label>Priority:</label>
-                <input type="radio" id="low" value="low" name="priority">
+                <span>Priority:</span>
+                <input type="radio" id="low" value="Low" name="priority">
                 <label for="low">Low</label>
-                <input type="radio" id="medium" value="medium" name="priority">
+                <input type="radio" id="medium" value="Medium" name="priority">
                 <label for="medium">Medium</label>
-                <input type="radio" id="high" value="high" name="priority">
+                <input type="radio" id="high" value="High" name="priority">
                 <label for="high">High</label>
             </div>
 
-            <button type="submit">Add Task</button><hr>
+            <button type="submit">Add Task</button>
+            <hr>
 
-            <p id="error-message" class="error-message"></p>
+            <p id="error-message"></p>
 
-            <ul id="task-list">
-            </ul>
+            <ul id="task-list"></ul>
         </form>
     </div>
 

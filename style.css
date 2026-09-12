@@ -44,11 +44,14 @@ button:hover{
 
 ul li{
     user-select: none;
-    cursor: pointer;
     padding: 8px;
 }
 
 .completed{
     color: gray;
     text-decoration: line-through;
+}
+
+#task-list button{
+    margin-left: 5px;
 }

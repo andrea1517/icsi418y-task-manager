@@ -31,13 +31,36 @@ form.addEventListener("submit", function(event) {
     errorMessage.textContent = "";
 
     displayTasks();
-
     taskInput.value = "";
-    taskPriority.completed = false;
 });
 
 function displayTasks() {
     taskList.innerHTML = "";
 
-    
+    tasks.forEach(function(task, index) {
+        const taskElement = document.createElement("li");
+        taskElement.textContent = task.name + " | Priority: " + task.priority;
+
+        if (task.completed) {
+            taskElement.classList.add("completed");
+        }
+
+        const completeButton = document.createElement("button");
+        completeButton.textContent = "Complete";
+        completeButton.addEventListener("click", function() {
+            task.completed = !task.completed;
+            displayTasks();
+        });
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", function() {
+            tasks.splice(index, 1)
+            displayTasks();
+        });
+
+        taskElement.appendChild(completeButton);
+        taskElement.appendChild(deleteButton);
+        taskList.appendChild(taskElement);
+    });
 }
